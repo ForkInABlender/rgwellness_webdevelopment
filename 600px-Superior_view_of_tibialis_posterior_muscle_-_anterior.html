@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<script src="https://raw.githubusercontent.com/davidjbradshaw/imagemap-resizer/master/js/imageMapResizer.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/maphilight/1.4.0/jquery.maphilight.min.js"></script>
+  	<style>
+    	img{
+    		height:auto;
+			  width:auto;
+		}
+    </style>
+    <script type="text/javascript">
+        $(function() {
+            $('.map').maphilight({
+                fillColor: '0000f1',
+				        strokeColor: '00ff00',
+            });
+            $('.map').imageMapResize();
+        });
+    </script>
+</head>
+<body>
+    <img src="https://github.com/ForkInABlender/rgwellness_webdevelopment/blob/main/tibialis%20posterior/600px-Superior_view_of_tibialis_posterior_muscle_-_anterior.png?raw=true" usemap="#map" class="map" data-maphilight='{"alwaysOn":false}'>
+
+    <map name="map">
+    <area target="" alt="" title="" href="" coords="205,182,205,196,204,203,204,210,204,222,204,234,203,248,205,269,206,280,208,292,210,296,210,302,210,312,211,321,214,336,215,336,214,303,212,286,211,264,208,216,207,187" shape="poly">
+    <area target="" alt="" title="" href="" coords="240,390,244,406,248,417,254,425" shape="poly">
+    <area target="" alt="" title="" href="" coords="254,456,252,464,249,473,243,479,238,484,235,490,237,481,241,479,243,474,245,470,245,466,248,460,250,450,256,438,256,446" shape="poly">
+    <area target="" alt="" title="" href="" coords="393,184,394,196,397,219,395,235,395,251,393,282,389,318,389,327,383,340" shape="poly">
+    <area target="" alt="" title="" href="" coords="362,487,362,478,357,476,350,475,356,466,349,447,344,441,346,453,349,463" shape="poly">
+    </map>
+</body>
+</html>
