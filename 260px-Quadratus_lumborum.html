@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<script src="https://raw.githubusercontent.com/davidjbradshaw/imagemap-resizer/master/js/imageMapResizer.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/maphilight/1.4.0/jquery.maphilight.min.js"></script>
+  	<style>
+    	img{
+    		height:auto;
+			width:auto;
+		}
+    </style>
+    <script type="text/javascript">
+        $(function() {
+            $('.map').maphilight({
+                fillColor: '0000f1',
+				strokeColor: '00ff00',
+            });
+            $('.map').imageMapResize();
+        });
+    </script>
+</head>
+<body>
+    <img src="https://github.com/ForkInABlender/rgwellness_webdevelopment/blob/main/quadratus%20lumborum/260px-Quadratus_lumborum.png?raw=true" usemap="#map" class="map" data-maphilight='{"alwaysOn":false}'>
+    <map name="map">
+    	<area target="" title="" href="" coords="99,219,105,223,110,227,116,232,119,238,116,238,116,241,119,259,121,270,126,296,133,328,138,347,141,354,134,356,124,356,126,352,124,344,121,340,114,335,107,333,101,331,90,331,94,328,102,328,113,330,119,332,120,334,122,330,121,322,120,316,117,311,112,305,96,295,100,295,105,298,110,300,116,305,120,311,121,310,118,296,115,285,111,278,105,269,99,265,91,264,97,260,107,269,111,274,115,280,115,280,114,274,111,266,108,260,103,251,94,242,90,241,96,239,102,246,106,250,110,256,112,257,107,235" shape="poly">
+    </map>
+</body>
+</html>
