@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://raw.githubusercontent.com/davidjbradshaw/imagemap-resizer/master/js/imageMapResizer.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/maphilight/1.4.0/jquery.maphilight.min.js"></script>
+  	<style>
+    	img{
+			height:auto;
+			width:auto;
+		}
+    </style>
+    <script type="text/javascript">
+        $(function() {
+            $('.map').maphilight({
+				        fillColor: '0000f1',
+				        strokeColor: '00ff00',
+            });
+            $('.map').imageMapResize();
+        });
+    </script>
+</head>
+<body>
+    <img src="https://github.com/ForkInABlender/rgwellness_webdevelopment/blob/main/psoas/600px-Psoas_major_muscle11.png?raw=true" usemap="#map" class="map" data-maphilight='{"alwaysOn":false}'>
+<map name="map">
+    <area target="" alt="" title="" href="" coords="221,414,228,407,232,396,236,380,242,368,242,358,244,347,247,336,246,316,246,298,251,288,262,272,271,255,275,242,281,240,283,231,284,226,284,220,287,214,282,212,285,201,285,194,282,192,283,188,290,184,284,184,282,179,281,178,285,173,284,164,283,158,288,157,288,156,283,157,282,148,286,143,282,135,285,126,286,118,285,112,280,118,274,134,269,153,264,164,260,177,254,189,247,208,243,226,239,238,238,245,236,254,231,264,229,274,227,283,228,296,231,308,234,323,236,336,235,351,231,370,222,388,217,405" shape="poly">
+    <area target="" alt="" title="" href="" coords="316,109,312,115,315,122,317,128,318,133,316,149,313,156,318,160,318,167,316,175,319,181,316,186,318,192,314,204,315,212,317,219,316,229,319,239,326,243,329,251,333,258,336,266,341,272,347,280,353,291,356,300,356,306,356,315,356,329,356,338,358,347,359,358,360,367,365,381,370,396,372,404,378,411,382,414,385,410,382,396,379,387,374,377,368,359,367,341,368,325,373,301,375,288,372,268,366,253,361,233,356,208,326,132,321,117" shape="poly">
+</map>
+</body>
+</html>
