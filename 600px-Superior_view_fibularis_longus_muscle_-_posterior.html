@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<script src="https://raw.githubusercontent.com/davidjbradshaw/imagemap-resizer/master/js/imageMapResizer.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/maphilight/1.4.0/jquery.maphilight.min.js"></script>
+  	<style>
+    	img{
+    		height:auto;
+			width:auto;
+		}
+    </style>
+    <script type="text/javascript">
+        $(function() {
+            $('.map').maphilight({
+                fillColor: '0000f1',
+				strokeColor: '00ff00',
+            });
+            $('.map').imageMapResize();
+        });
+    </script>
+</head>
+<body>
+    <img src="https://github.com/ForkInABlender/rgwellness_webdevelopment/blob/main/peroneal%20muscles/600px-Superior_view_fibularis_longus_muscle_-_posterior.png?raw=true" usemap="#map" class="map" data-maphilight='{"alwaysOn":false}'>
+<map name="map">
+    <area target="" title="" href="" coords="202,482,202,487,208,489,213,484,222,477,219,462,215,448,211,430,208,417,205,394,204,378,205,365,205,351,205,332,205,322,204,304,201,281,201,263,203,251,203,244,202,234,200,226,201,216,200,205,197,196,195,194,196,171,192,164,197,155,189,152,185,157,186,165,186,175,183,188,182,197,181,207,180,218,180,231,180,246,184,282,187,301,188,311,191,332,192,340,195,364,200,394,203,411,207,424,209,435,210,446,214,458,216,472,216,477,213,481,206,484" shape="poly">
+    <area target="" title="" href="" coords="395,485,399,483,398,487,395,488,390,485,384,481,378,477,382,460,392,421,395,405,396,390,396,376,396,360,396,350,395,328,396,315,397,299,399,289,400,280,400,273,398,259,398,249,398,239,399,228,399,220,400,213,402,202,404,194,406,179,408,166,404,156,407,155,414,159,415,166,415,180,418,195,419,201,420,221,420,238,417,277,412,310,411,324,405,356,404,372,401,387,399,398,397,410,394,426,389,447,385,465,383,474,388,481" shape="poly">
+</map>
+</body>
+</html>
