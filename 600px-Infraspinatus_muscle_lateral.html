@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<script src="https://raw.githubusercontent.com/davidjbradshaw/imagemap-resizer/master/js/imageMapResizer.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/maphilight/1.4.0/jquery.maphilight.min.js"></script>
+  	<style>
+    	img{
+    		height:auto;
+			width:auto;
+		}
+    </style>
+    <script type="text/javascript">
+        $(function() {
+            $('.map').maphilight({
+                fillColor: '0000f1',
+				strokeColor: '00ff00',
+            });
+            $('.map').imageMapResize();
+        });
+    </script>
+</head>
+<body>
+    <img src="https://github.com/ForkInABlender/rgwellness_webdevelopment/blob/main/infraspinatus/600px-Infraspinatus_muscle_lateral.png?raw=true" usemap="#map" class="map" data-maphilight='{"alwaysOn":false}'>
+<map name="map">
+	 <area target="" title="" href="" coords="283,205,276,210,269,214,261,218,256,221,252,229,246,239,242,249,238,255,231,264,229,269,224,275,222,283,219,296,214,304,202,313,198,314,196,307,193,290,193,279,195,262,207,233,214,217,217,216,220,210,230,200,237,197,248,195,261,189,274,188,284,188,290,192,294,197,295,199,295,201,293,203" shape="poly">
+</map>
+</body>
+</html>
