@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<script src="https://raw.githubusercontent.com/davidjbradshaw/imagemap-resizer/master/js/imageMapResizer.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/maphilight/1.4.0/jquery.maphilight.min.js"></script>
+  	<style>
+    	img{
+    		height:auto;
+			width:auto;
+		}
+    </style>
+    <script type="text/javascript">
+        $(function() {
+            $('.map').maphilight({
+                fillColor: '0000f1',
+				strokeColor: '00ff00',
+            });
+            $('.map').imageMapResize();
+        });
+    </script>
+</head>
+<body>
+    <img src="https://github.com/ForkInABlender/rgwellness_webdevelopment/blob/main/gluteus%20maximus/Gluteus_maximus.png?raw=true" usemap="#map" class="map" data-maphilight='{"alwaysOn":false}'>
+<map name="map">
+	   <area target="" alt="" title="" href="" coords="179,239,167,184,163,167,162,144,163,125,167,102,174,99,168,82,169,65,178,60,186,40,196,27,215,17,228,21,239,27,243,38,260,36,264,28,281,4,297,15,315,31,326,43,326,55,332,63,335,69,339,82,334,93,336,105,342,112,342,121,342,134,342,146,338,174,331,199,325,220,317,239,324,216,326,194,329,166,326,153,312,138,298,125,284,117,273,107,265,95,254,77,253,88,244,99,232,112,213,123,191,141,178,154" shape="poly">
+</map>
+</map>
+</body>
+</html>
