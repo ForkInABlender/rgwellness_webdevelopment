@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<script src="https://raw.githubusercontent.com/davidjbradshaw/imagemap-resizer/master/js/imageMapResizer.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/maphilight/1.4.0/jquery.maphilight.min.js"></script>
+  	<style>
+    	img{
+    		height:auto;
+			width:auto;
+		}
+    </style>
+    <script type="text/javascript">
+        $(function() {
+            $('.map').maphilight({
+                fillColor: '0000f1',
+				strokeColor: '00ff00',
+            });
+            $('.map').imageMapResize();
+        });
+    </script>
+</head>
+<body>
+    <img src="https://github.com/ForkInABlender/rgwellness_webdevelopment/blob/main/gluteus%20medius/600px-Gluteus_medius_muscle02.png?raw=true" usemap="#map" class="map" data-maphilight='{"alwaysOn":false}'>
+<map name="map">
+	   <area target="" title="" href="" coords="298,272,305,297,293,325,292,335,294,337,288,333,282,327,276,313,273,291,276,279,285,271,291,269" shape="poly">
+</map>
+</map>
+</body>
+</html>
