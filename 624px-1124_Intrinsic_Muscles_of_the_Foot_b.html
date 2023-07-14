@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<script src="https://raw.githubusercontent.com/davidjbradshaw/imagemap-resizer/master/js/imageMapResizer.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/maphilight/1.4.0/jquery.maphilight.min.js"></script>
+  	<style>
+    	img{
+    		height:auto;
+			width:auto;
+		}
+    </style>
+    <script type="text/javascript">
+        $(function() {
+            $('.map').maphilight({
+                fillColor: '0000f1',
+				strokeColor: '00ff00',
+            });
+            $('.map').imageMapResize();
+        });
+    </script>
+</head>
+<body>
+    <img src="https://github.com/ForkInABlender/rgwellness_webdevelopment/blob/main/feet/624px-1124_Intrinsic_Muscles_of_the_Foot_b.png?raw=true" usemap="#map" class="map" data-maphilight='{"alwaysOn":false}'>
+<map name="map">
+	    <area target="" title="" href="" coords="281,93,290,107,294,119,295,141,294,160,289,201,303,192,322,188,335,189,347,190,354,200,342,158,345,139,350,113,361,87,346,79,314,76,294,81,283,84" shape="poly">
+    <area target="" title="" href="" coords="278,86,254,119,245,142,238,157,235,175,229,199,228,220,228,238,228,262,227,286,230,325,232,287,232,272,244,262,247,273,248,285,246,294,244,302,245,323,244,329,245,342,236,360,230,370,227,378,225,401,224,408,232,409,239,404,246,375,261,336,275,297,282,268,288,215,287,204,286,200,290,183,291,151,290,119,287,110" shape="poly">
+    <area target="" title="" href="" coords="411,282,406,256,393,218,385,195,370,146,359,104,351,112,360,142,367,163,370,177,379,207,387,229,395,274" shape="poly">
+    <area target="" title="" href="" coords="363,346,356,334,353,350,333,349,327,330,330,341,326,347,318,352,311,350,302,339,299,344,290,344,284,341,280,323,283,300,284,258,289,226,291,212,289,202,300,195,310,189,343,194,356,214,372,306,375,341" shape="poly">
+</map>
+</body>
+</html>
