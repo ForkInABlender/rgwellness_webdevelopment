@@ -1,1 +1,105 @@
-<_
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Horizontally Scrollable Section with Brython and Image Maps</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.11.3/brython.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.11.3/brython_stdlib.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/image-map-resizer@1.0.10/js/imageMapResizer.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/maphilight/1.4.0/jquery.maphilight.min.js"></script>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+        .scrollable-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            overflow-x: auto;
+            overflow-y: hidden;
+            padding: 5px;
+        }
+        .item {
+            display: inline-block flex;
+            flex-wrap: wrap;
+            margin-top: 5px;
+            margin-right: 5px;
+            margin-left: 5px;
+        }
+
+      /* Custom scroll bar */
+      .scrollable-container::-webkit-scrollbar {
+          height: 8px; /* Scrollbar height */
+      }
+      .scrollable-container::-webkit-scrollbar-track {
+          background: #f1f1f1; 
+      }
+      .scrollable-container::-webkit-scrollbar-thumb {
+          background: #888; 
+      }
+      .scrollable-container::-webkit-scrollbar-thumb:hover {
+          background: #555; 
+      }
+    </style>
+</head>
+<body onload="brython()">
+
+<div class="scrollable-container" id="scrollable-container">
+    <!-- Content will be added by Brython -->
+</div>
+
+<!-- Image maps -->
+<map name="cat-map" class="cat-map map">
+  <area target="" title="Rotatores" href="https://rgwellness.teachable.com/courses/test/lectures/47025990" coords="-1,-1,1000,1000" shape="rect">
+</map>
+<map name="dog-map" class="dog-map map">
+  <area target="" title="Serratus Anterior" href="https://rgwellness.teachable.com/courses/test/lectures/47337860" coords="-1,-1,1000,1000" shape="rect">
+</map>
+<map name="cheetah-map" class="cheetah-map map">
+  <area target="" title="Supraspinatus Muscle" href="https://rgwellness.teachable.com/courses/test/lectures/47302633" coords="-1,-1,1000,1000" shape="rect">
+</map>
+<map name="bird-map" class="bird-map map">
+  <area target="" title="Rhomboideus Major" href="https://rgwellness.teachable.com/courses/test/lectures/47026281" coords="-1,-1,1000,1000" shape="rect">
+</map>
+<map name="whale-map" class="whale-map map">
+  <area target="" title="Teres Major Muscle" href="https://rgwellness.teachable.com/courses/test/lectures/47417822" coords="-1,-1,1000,1000" shape="rect">
+</map>
+
+  <script type="text/python3">
+  from browser import document, html, window
+
+  # Select the scrollable container
+  scrollable_container = document['scrollable-container']
+
+  # Add content to the scrollable container
+  images = [
+      {"src": "https://raw.githubusercontent.com/ForkInABlender/rgwellness_webdevelopment/architecture_refined/back/442px-Rotatores.png", "usemap": "#cat-map", "class": "map"},
+      {"src": "https://raw.githubusercontent.com/ForkInABlender/rgwellness_webdevelopment/architecture_refined/back/600px-Serratus_anterior_muscles_lateral.png", "usemap": "#dog-map", "class": "map"},
+      {"src": "https://raw.githubusercontent.com/ForkInABlender/rgwellness_webdevelopment/architecture_refined/back/600px-Supraspinatus_muscle_back4.png", "usemap": "#cheetah-map", "class": "map"},
+      {"src": "https://raw.githubusercontent.com/ForkInABlender/rgwellness_webdevelopment/architecture_refined/back/Rhomboideus_major.png", "usemap": "#bird-map", "class": "map"},
+      {"src": "https://raw.githubusercontent.com/ForkInABlender/rgwellness_webdevelopment/architecture_refined/back/Teres_major_muscle_lateral.png", "usemap": "#whale-map", "class": "map"}
+  ]
+
+  for image in images:
+      item = html.DIV(Class="item")
+      img = html.IMG(src=image["src"], useMap=image["usemap"], Class=image["class"], style={"max-width": "600px", "max-height": "600px"})
+      item <= img
+      scrollable_container <= item
+
+  # Apply maphilight after all images are loaded
+  def apply_maphilight():
+      window.jQuery('.map').maphilight({
+          'fillColor': '0000f1',
+          'strokeColor': '00ff00',
+      })
+
+  window.setTimeout(apply_maphilight, .001)
+  </script>
+
+</body>
+</html>
