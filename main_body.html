@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!-- # Dylan Kenneth Eliot
+
+This is an update to the code used inside of teachable for course work as a back-up.
+
+
+-->
+
+
+<html>
+
+<head>
+    <script src="https://raw.githubusercontent.com/davidjbradshaw/imagemap-resizer/master/js/imageMapResizer.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/maphilight/1.4.0/jquery.maphilight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.11.3/brython.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.11.3/brython_stdlib.min.js"></script>
+    <style>
+        img{
+            height:auto;
+            width:auto;
+        }
+    #container{
+      display: flex;
+    }
+    #zone {
+        position: absolute;
+        top: 15%;
+        left: 62.2253%;
+    }
+    #zone2 {
+        flex: 1;
+    }
+    </style>
+    <script type="text/javascript">
+        $(function() {
+            $('.map').maphilight({
+                fillColor: '0000f1',
+                strokeColor: '00ff00',
+            });
+            $('.map').imageMapResize();
+        });
+    </script>
+</head>
+
+<body onload="brython()">
+<div id="container">
+    <img src="https://github.com/ForkInABlender/rgwellness_webdevelopment/blob/main/306317023_662373305299399_4372922805916111509_n.png?raw=true" usemap="#map" class="map" data-maphilight='{"alwaysOn":false}'>
+    <map name="map">
+        <area target="" title="Neck" href="https://rgwellness.teachable.com/courses/test/lectures/54537810" coords="111,64,104,70,97,72,93,71,83,66,82,67,82,70,81,75,79,80,75,84,66,87,79,80,60,88,68,89,80,87,88,85,94,87,96,90,100,87,106,87,114,87,120,89,127,89,133,88,123,86,115,81,113,76" shape="poly">
+        <area target="" title="Head" href="https://rgwellness.teachable.com/courses/test/lectures/54537777" coords="113,54,118,50,122,44,119,39,119,29,118,20,113,10,105,5,95,4,82,9,76,21,74,32,75,38,72,43,73,48,77,52,82,60,86,66,91,70,101,71,111,64" shape="poly">
+        <area target="" title="Chest" href="https://rgwellness.teachable.com/courses/test/lectures/54537808" coords="60,89,51,90,44,94,51,100,56,107,60,118,61,126,61,155,61,164,94,163,114,165,130,167,134,153,133,133,131,126,130,117,132,106,144,93,134,88,127,90,121,89,109,86,99,87,98,88,94,86,85,86,71,89" shape="poly">
+        <area target="" title="Left Shoulder" href="https://rgwellness.teachable.com/courses/test/lectures/45940285" coords="140,90,135,99,132,107,130,114,134,122,135,140,137,156,139,167,157,162,154,140,152,130,154,117,154,104,149,95" shape="poly">
+        <area target="" title="Right Shoulder" href="https://rgwellness.teachable.com/courses/test/lectures/45940285" coords="45,94,54,99,60,109,60,117,59,135,59,152,55,169,37,166,42,129,40,115,42,102" shape="poly">
+        <area target="" title="Right Forearm" href="" coords="35,169,30,186,29,201,26,213,23,224,15,227,9,231,2,240,2,243,5,243,9,238,12,237,13,242,11,249,7,260,7,267,10,264,15,251,18,252,14,268,13,270,14,272,18,263,20,254,20,268,22,269,26,251,27,264,29,264,32,250,36,240,37,227,45,211,50,195,55,182,55,174" shape="poly">
+        <area target="" title="Left Forearm" href="" coords="158,165,139,171,142,191,146,198,148,204,151,214,157,225,158,237,163,251,165,261,164,266,166,265,168,253,172,269,175,272,174,254,179,269,181,267,177,251,186,267,188,266,181,244,183,239,190,243,192,242,184,231,171,222,165,205,165,187" shape="poly">
+        <area target="" title="Lower Abdomen" href="" coords="59,199,135,202,140,227,142,251,115,249,95,258,87,248,52,249,54,224" shape="poly">
+        <area target="" title="Right Thigh" href="https://rgwellness.teachable.com/courses/test/lectures/49211193" coords="48,358,77,363,80,348,85,334,87,304,92,278,95,266,89,258,85,251,52,253,54,308,55,334" shape="poly">
+        <area target="" title="Left Thigh" href="https://rgwellness.teachable.com/courses/test/lectures/49211193" coords="142,254,114,253,99,261,99,271,104,289,109,308,109,324,110,339,114,350,119,360,144,355,140,343,139,319,142,294" shape="poly">
+        <area target="" title="Right Foot" href="" coords="48,364,77,370,77,381,75,393,72,405,69,423,74,445,75,462,77,477,75,490,73,497,73,497,67,499,57,493,52,488,53,479,56,456,56,443,57,439,48,390,47,380" shape="poly">
+        <area target="" title="Left Foot" href="" coords="117,366,145,360,147,372,147,387,146,398,142,411,140,422,138,446,139,456,143,476,142,486,140,490,138,491,132,497,128,498,126,499,119,494,117,482,121,450,125,425,117,385" shape="poly">
+        <area target="" title="Left Forearm" href="" coords="247,167,266,170,265,183,263,192,260,201,256,209,249,226,249,234,244,243,244,250,242,261,239,263,239,247,234,267,231,266,233,250,228,267,225,266,229,245,221,263,218,262,224,243,224,232,218,239,215,240,215,238,226,224,235,221,240,202,243,183" shape="poly">
+        <area target="" title="Left Upper Arm" href="" coords="248,164,265,167,271,145,271,136,268,116,263,105,257,100,253,99,252,109,252,120,253,132" shape="poly">
+        <area target="" title="Upper Back" href="" coords="253,97,262,104,266,110,269,118,271,127,272,135,273,144,273,153,272,186,349,188,347,162,349,121,353,113,355,107,358,100,363,95,365,93,353,92,352,102,346,110,343,117,340,126,330,129,330,101,330,93,333,85,340,88,354,88,356,91,365,92,343,81,328,73,324,65,296,65,293,72,281,89,288,85,291,93,291,101,291,128,284,128,279,120,275,109,267,100,270,92,265,91,265,87,281,87,290,76,277,80,259,90" shape="poly">
+        <area target="" title="Right Upper Arm" href="" coords="365,95,361,97,356,102,353,114,350,122,349,131,349,137,353,164,371,155,367,130,369,119,369,103" shape="poly">
+        <area target="" title="Right Forearm" href="" coords="371,162,354,169,356,184,363,204,371,226,378,248,380,264,381,263,381,246,387,267,390,267,388,251,393,267,396,265,391,248,400,263,401,258,396,233,402,238,405,240,407,239,397,225,385,219,380,200,379,189,376,174" shape="poly">
+        <area target="" title="Gludious & abdominal" href="" coords="358,258,314,259,311,240,307,259,263,258,266,224,272,189,350,192,356,224" shape="poly">
+        <area target="" title="Left Thigh" href="https://rgwellness.teachable.com/courses/test/lectures/49211193" coords="264,262,306,263,305,279,302,289,299,301,298,315,297,323,296,336,295,342,289,353,289,360,262,356,266,340,267,310,265,292,263,284" shape="poly">
+        <area target="" title="Right Thigh" href="https://rgwellness.teachable.com/courses/test/lectures/49211193" coords="314,264,358,263,356,285,354,309,354,318,356,341,358,353,333,357,325,344,323,320,324,308,315,280" shape="poly">
+        <area target="" title="Lower Left Leg" href="" coords="260,359,288,363,289,371,290,383,287,396,282,415,282,426,287,452,289,477,287,489,284,495,279,495,273,494,268,488,264,484,266,465,269,450,269,442,264,405,259,385" shape="poly">
+        <area target="" title="Lower Right Leg" href="" coords="332,360,358,358,361,367,361,380,357,405,352,430,353,444,352,458,356,478,356,485,351,490,344,495,341,492,338,495,334,491,331,478,334,451,339,422,331,385" shape="poly">
+        <area target="" title="back of head" href="https://rgwellness.teachable.com/courses/test/lectures/54537777" coords="295,5,303,1,316,1,322,4,330,11,332,18,333,28,332,35,336,39,332,48,326,51,326,62,295,61,293,49,288,49,287,45,285,42,287,35,287,25,289,15" shape="poly">
+        <area target="" title="Right Shoulder Blade" href="" coords="333,86,339,88,353,89,355,90,349,92,352,96,351,100,350,103,347,107,344,114,340,122,338,125,334,127,330,126,331,100,331,94" shape="poly">
+        <area target="" title="Left Shoulder Blade" href="" coords="287,86,280,89,280,87,266,88,266,91,273,90,268,99,270,103,275,108,278,116,282,125,286,128,289,127,290,121,290,101,290,93" shape="poly">
+    </map>
+
+    <script type="text/python3">
+        from browser import document, window, html
+        from browser.widgets.menu import Menu
+        zone2 = document["zone2"]
+        menu = Menu(zone2)
+        def play_video1(ev):
+            window.location.href=ev
+
+        # Add new menu options
+        body_parts_menu = menu.add_menu("Body Parts")
+        body_parts_menu.add_item("Upper Back, Shoulder, and Arm", callback=lambda ev: play_video1("{url goes here}"))
+        body_parts_menu.add_item("Torso", callback=lambda ev: play_video1("{url goes here}"))
+        body_parts_menu.add_item("Lower Torso", callback=lambda ev: play_video1("{url goes here}"))
+        body_parts_menu.add_item("Leg, Ankle & Foot", callback=lambda ev: play_video1("{url goes here}"))
+        body_parts_menu.add_item("Hip, Thigh & Knee", callback=lambda ev: play_video1("{url goes here}"))
+        body_parts_menu.add_item("Head and Neck", callback=lambda ev: play_video1("{url goes here}"))
+        body_parts_menu.add_item("Forearm & Hand Pain", callback=lambda ev: play_video1("{url goes here}"))
+    </script>
+    <div id="zone2"></div>
+</div>
+</body>
+</html>
