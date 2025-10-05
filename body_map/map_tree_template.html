@@ -1,0 +1,81 @@
+<!-- # Dylan Kenneth Eliot
+"""
+By my directive, use this template as you'd like.
+
+Do keep in mind that this works and all code is manually tested.
+
+This will be updated in a new copy to include all images needed.
+This is a 2-layer template. Meaning that all maps on the layer-2 pages that need it will follow similar template layout.
+
+The last thing to add later on will be button logic. also brython.js controlled.
+
+This saved taking a longer way around an extremely short path & saved me from excessive page creation.
+"""
+-->
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/maphilight/1.4.0/jquery.maphilight.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/brython@3.11.3/brython.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/brython@3.11.3/brython_stdlib.js"></script>
+</head>
+<body onload="brython()">
+  <img id="mainImg" src="https://c8.alamy.com/comp/GRMJXG/demo-black-and-red-square-web-glossy-icon-GRMJXG.jpg"
+       usemap="#demo" alt="Demo Image">
+  <map id="map" name="demo" class="map">
+    <area shape="rect" coords="10,10,100,100" title="A">
+    <area shape="rect" coords="150,10,250,100" title="B">
+    <area shape="rect" coords="280,10,380,100" title="C">
+  </map>
+  <script type="text/python">
+    from browser import document, window
+    
+    jq = window.jQuery
+    jq("img[usemap]").maphilight({
+        'fillColor': '#0000ff',
+        'strokeColor': '#00ff00',
+    })
+    images = {
+        'A': {
+            'src': 'https://c8.alamy.com/comp/GRMJXG/demo-black-and-red-square-web-glossy-icon-GRMJXG.jpg',
+            'areas': [
+                {'shape': 'circle', 'coords': '200,150,80', 'title': 'Back', 'href': 'https://www.youtube.com'}
+            ]
+        },
+        'B': {
+            'src': 'https://c8.alamy.com/comp/GRMJXG/demo-black-and-red-square-web-glossy-icon-GRMJXG.jpg',
+            'areas': [
+                {'shape': 'rect', 'coords': '100,100,300,200', 'title': 'Back', 'href': 'https://c8.alamy.com/comp/GRMJXG/demo-black-and-red-square-web-glossy-icon-GRMJXG.jpg'}
+            ]
+        },
+        'C': {
+            'src': 'https://c8.alamy.com/comp/GRMJXG/demo-black-and-red-square-web-glossy-icon-GRMJXG.jpg',
+            'areas': [
+                {'shape': 'rect', 'coords': '50,50,350,250', 'title': 'Back', 'href': 'https://c8.alamy.com/comp/GRMJXG/demo-black-and-red-square-web-glossy-icon-GRMJXG.jpg'}
+            ]
+        }
+    }
+    
+    def area_click(ev):
+        #ev.preventDefault()
+        title = jq(ev.target).attr('title')
+        
+       
+        jq("#map").empty()
+        
+        if title in images:
+            document.getElementsByTagName('img')[0].src = images[title]['src']
+            for area in images[title]['areas']:
+                area_html = f"<area shape='{area['shape']}' coords='{area['coords']}' href='{area['href']}' title='{area['title']}'>"
+                jq("#map").append(area_html)
+        
+        jq("img[usemap]").maphilight({
+            'fillColor': '#0000ff',
+            'strokeColor': '#00ff00',
+        })
+        jq("area").on("click", area_click)
+    
+    jq("area").on("click", area_click)
+  </script>
+</body>
+</html>
