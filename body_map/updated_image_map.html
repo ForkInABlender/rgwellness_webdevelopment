@@ -1,0 +1,206 @@
+<!-- # Dylan Kenneth Eliot
+"""
+This is a simple app.
+
+It allows one to make use of the image maps with the intended purpose of linking to a youtube video on the secondary maps via href link.
+
+
+The initial embedded player had issues with adaptation, so it was stripped for parts as it will send them to the content as needed.
+"""
+-->
+
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/maphilight/1.4.0/jquery.maphilight.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/brython@3.11.3/brython.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/brython@3.11.3/brython_stdlib.js"></script>
+</head>
+<style>
+    #video_zone {
+        flex: 1;
+        right: 100%;
+    }
+</style>
+<body onload="brython()">
+  <img id="mainImg" src="https://github.com/ForkInABlender/rgwellness_webdevelopment/blob/main/306317023_662373305299399_4372922805916111509_n.png?raw=true"
+       usemap="#demo" alt="Demo Image">
+  <map id="map" name="demo" class="map">
+        <area title="Neck" coords="111,64,104,70,97,72,93,71,83,66,82,67,82,70,81,75,79,80,75,84,66,87,79,80,60,88,68,89,80,87,88,85,94,87,96,90,100,87,106,87,114,87,120,89,127,89,133,88,123,86,115,81,113,76" shape="poly">
+        <area  title="Head" coords="113,54,118,50,122,44,119,39,119,29,118,20,113,10,105,5,95,4,82,9,76,21,74,32,75,38,72,43,73,48,77,52,82,60,86,66,91,70,101,71,111,64" shape="poly">
+        <area  title="Chest" coords="60,89,51,90,44,94,51,100,56,107,60,118,61,126,61,155,61,164,94,163,114,165,130,167,134,153,133,133,131,126,130,117,132,106,144,93,134,88,127,90,121,89,109,86,99,87,98,88,94,86,85,86,71,89" shape="poly">
+        <area  title="Left Shoulder" coords="140,90,135,99,132,107,130,114,134,122,135,140,137,156,139,167,157,162,154,140,152,130,154,117,154,104,149,95" shape="poly">
+        <area  title="Right Shoulder" coords="45,94,54,99,60,109,60,117,59,135,59,152,55,169,37,166,42,129,40,115,42,102" shape="poly">
+        <area  title="Right Forearm" coords="35,169,30,186,29,201,26,213,23,224,15,227,9,231,2,240,2,243,5,243,9,238,12,237,13,242,11,249,7,260,7,267,10,264,15,251,18,252,14,268,13,270,14,272,18,263,20,254,20,268,22,269,26,251,27,264,29,264,32,250,36,240,37,227,45,211,50,195,55,182,55,174" shape="poly">
+        <area  title="Left Forearm" coords="158,165,139,171,142,191,146,198,148,204,151,214,157,225,158,237,163,251,165,261,164,266,166,265,168,253,172,269,175,272,174,254,179,269,181,267,177,251,186,267,188,266,181,244,183,239,190,243,192,242,184,231,171,222,165,205,165,187" shape="poly">
+        <area  title="Lower Abdomen" href="" coords="59,199,135,202,140,227,142,251,115,249,95,258,87,248,52,249,54,224" shape="poly">
+        <area  title="Right Thigh" coords="48,358,77,363,80,348,85,334,87,304,92,278,95,266,89,258,85,251,52,253,54,308,55,334" shape="poly">
+        <area  title="Left Thigh" coords="142,254,114,253,99,261,99,271,104,289,109,308,109,324,110,339,114,350,119,360,144,355,140,343,139,319,142,294" shape="poly">
+        <area  title="Right Left Leg" coords="48,364,77,370,77,381,75,393,72,405,69,423,74,445,75,462,77,477,75,490,73,497,73,497,67,499,57,493,52,488,53,479,56,456,56,443,57,439,48,390,47,380" shape="poly">
+        <area  title="Front Left Leg" coords="117,366,145,360,147,372,147,387,146,398,142,411,140,422,138,446,139,456,143,476,142,486,140,490,138,491,132,497,128,498,126,499,119,494,117,482,121,450,125,425,117,385" shape="poly">
+        <area  title="Back Left Forearm" coords="247,167,266,170,265,183,263,192,260,201,256,209,249,226,249,234,244,243,244,250,242,261,239,263,239,247,234,267,231,266,233,250,228,267,225,266,229,245,221,263,218,262,224,243,224,232,218,239,215,240,215,238,226,224,235,221,240,202,243,183" shape="poly">
+        <area  title="Left Upper Arm" coords="248,164,265,167,271,145,271,136,268,116,263,105,257,100,253,99,252,109,252,120,253,132" shape="poly">
+        <area  title="Upper Back" coords="253,97,262,104,266,110,269,118,271,127,272,135,273,144,273,153,272,186,349,188,347,162,349,121,353,113,355,107,358,100,363,95,365,93,353,92,352,102,346,110,343,117,340,126,330,129,330,101,330,93,333,85,340,88,354,88,356,91,365,92,343,81,328,73,324,65,296,65,293,72,281,89,288,85,291,93,291,101,291,128,284,128,279,120,275,109,267,100,270,92,265,91,265,87,281,87,290,76,277,80,259,90" shape="poly">
+        <area  title="Right Upper Arm" coords="365,95,361,97,356,102,353,114,350,122,349,131,349,137,353,164,371,155,367,130,369,119,369,103" shape="poly">
+        <area  title="Back Right Forearm" coords="371,162,354,169,356,184,363,204,371,226,378,248,380,264,381,263,381,246,387,267,390,267,388,251,393,267,396,265,391,248,400,263,401,258,396,233,402,238,405,240,407,239,397,225,385,219,380,200,379,189,376,174" shape="poly">
+        <area  title="Gludious & abdominal" coords="358,258,314,259,311,240,307,259,263,258,266,224,272,189,350,192,356,224" shape="poly">
+        <area  title="Back Left Thigh" coords="264,262,306,263,305,279,302,289,299,301,298,315,297,323,296,336,295,342,289,353,289,360,262,356,266,340,267,310,265,292,263,284" shape="poly">
+        <area  title="Back Right Thigh" coords="314,264,358,263,356,285,354,309,354,318,356,341,358,353,333,357,325,344,323,320,324,308,315,280" shape="poly">
+        <area  title="Back Left Leg" coords="260,359,288,363,289,371,290,383,287,396,282,415,282,426,287,452,289,477,287,489,284,495,279,495,273,494,268,488,264,484,266,465,269,450,269,442,264,405,259,385" shape="poly">
+        <area  title="Back Right Leg" coords="332,360,358,358,361,367,361,380,357,405,352,430,353,444,352,458,356,478,356,485,351,490,344,495,341,492,338,495,334,491,331,478,334,451,339,422,331,385" shape="poly">
+        <area  title="Back of Head" coords="295,5,303,1,316,1,322,4,330,11,332,18,333,28,332,35,336,39,332,48,326,51,326,62,295,61,293,49,288,49,287,45,285,42,287,35,287,25,289,15" shape="poly">
+        <area  title="Right Shoulder Blade" coords="333,86,339,88,353,89,355,90,349,92,352,96,351,100,350,103,347,107,344,114,340,122,338,125,334,127,330,126,331,100,331,94" shape="poly">
+        <area  title="Left Shoulder Blade" coords="287,86,280,89,280,87,266,88,266,91,273,90,268,99,270,103,275,108,278,116,282,125,286,128,289,127,290,121,290,101,290,93" shape="poly">
+  </map>        &nbsp;&nbsp;&nbsp;&nbsp; <div id="video_zone"></div>
+  <script type="text/python">
+    from browser import document, window, html
+    
+    jq = window.jQuery
+    jq("img[usemap]").maphilight({
+        'fillColor': '0000f1',
+        'strokeColor': '00ff00',
+    })
+    images = {
+        'Neck': {
+            'src': '',
+            'areas': [
+                        {'shape': 'rect', 'coords': '100,100,300,200', 'title': 'Back', 'href': ''}
+                     ]
+            },
+        'Right Left Leg': {
+            'src': 'https://github.com/ForkInABlender/rgwellness_webdevelopment/blob/main/tibialis%20anterior/600px-Anterior_compartment_of_leg_-_Tibialis_anterior.png?raw=true',
+            'areas': [
+                { 'shape': 'poly', 'coords': '171,57,181,76,183,84,185,103,184,116,189,131,192,141,196,159,197,181,193,225,196,334,198,381,210,429,217,441,219,472,221,495,216,505,212,503,209,497,212,490,213,483,214,469,211,445,205,434,199,404,185,340,174,279,165,222,163,160,166,106', 'title': '', 'href': '' },
+                #{ 'shape': 'poly', 'coords': '427,57,434,88,437,113,437,148,439,165,436,203,432,252,425,289,414,350,405,397,388,456,387,474,389,493,390,503,385,507,381,498,380,479,384,443,396,408,400,388,404,321,405,288,405,231,404,173,407,151,409,133,414,121,415,108,413,95,417,83,421,69', 'title': '', 'href': '' }
+            ]
+        },
+        'Front Left Leg': {
+            'src': 'https://github.com/ForkInABlender/rgwellness_webdevelopment/blob/main/tibialis%20anterior/600px-Anterior_compartment_of_leg_-_Tibialis_anterior.png?raw=true',
+            'areas': [
+                #{ 'shape': 'poly', 'coords': '171,57,181,76,183,84,185,103,184,116,189,131,192,141,196,159,197,181,193,225,196,334,198,381,210,429,217,441,219,472,221,495,216,505,212,503,209,497,212,490,213,483,214,469,211,445,205,434,199,404,185,340,174,279,165,222,163,160,166,106', 'title': '', 'href': '' },
+                { 'shape': 'poly', 'coords': '427,57,434,88,437,113,437,148,439,165,436,203,432,252,425,289,414,350,405,397,388,456,387,474,389,493,390,503,385,507,381,498,380,479,384,443,396,408,400,388,404,321,405,288,405,231,404,173,407,151,409,133,414,121,415,108,413,95,417,83,421,69', 'title': '', 'href': '' }
+            ]
+        },
+        'Right Thigh': {
+            'src': 'https://github.com/ForkInABlender/rgwellness_webdevelopment/raw/main/quads/Im-vastus-lateralis.png',
+            'areas': [
+                { 'shape': 'poly', 'coords': '231,161,224,161,226,177,222,208,232,216,232,231,233,259,239,284,244,312,261,420,269,452,269,394,269,354,270,293,267,264', 'title': '', 'href': '' },
+                { 'shape': 'poly', 'coords': '196,203,189,221,184,243,180,277,184,295,186,305,189,321,209,404,232,466,237,476,246,469,235,419,234,395,221,328,208,258,203,235,197,229', 'title': '', 'href': '' },
+                { 'shape': 'poly', 'coords': '234,484,227,494,226,502,231,514,253,513,266,506,278,501,282,490,270,474,268,498,257,496,246,497,238,498', 'title': '', 'href': '' },
+                { 'shape': 'poly', 'coords': '221,170,223,186,213,221,210,240,202,223,202,198,200,187,191,194,189,182,198,172', 'title': '', 'href': '' }
+            ]
+        },
+        'Back Right Leg': {
+            'src': 'https://github.com/ForkInABlender/rgwellness_webdevelopment/blob/main/soleus/600px-Posterior_compartment_of_leg_-_soleus.png?raw=true',
+            'areas': [
+                { 'shape': 'poly', 'coords': '375,407,371,399,377,391,379,339,405,291,418,263,425,225,427,221,429,203,431,175,434,152,435,139,436,104,432,81,434,73,429,66,418,68,402,90,384,112,364,148,355,172,349,200,347,222,348,243,359,299,362,330,361,364,354,417,357,417',
+                'title': '', 'href': '' }
+            ]
+            },
+        'Back Left Leg': {
+            'src': 'https://github.com/ForkInABlender/rgwellness_webdevelopment/blob/main/soleus/600px-Posterior_compartment_of_leg_-_soleus.png?raw=true',
+            'areas': [
+                { 'shape': 'poly', 'coords': '163,145,167,97,166,74,170,67,179,67,194,85,231,136,243,166,248,191,252,212,252,227,250,255,242,298,238,327,241,387,243,406,243,417,229,408,227,397,221,391,225,366,223,349,217,334,205,312,191,285,179,257,173,210,168,194,166,178,168,167', 'title': '', 'href': '' },
+            ]
+            },
+        'Left Thigh': {
+            'src': 'https://github.com/ForkInABlender/rgwellness_webdevelopment/raw/main/quads/424px-Tensor_vastus_intermedius_muscle.jpg',
+            'areas': [
+                { 'shape': 'poly', 'coords': '233,174,244,196,245,221,236,241,229,231,223,208,221,197,227,182', 'title': '', 'href': '' },
+                { 'shape': 'poly', 'coords': '259,213,252,222,245,233,244,244,245,295,240,373,235,410,222,470,216,490,242,467,260,425,267,387,270,289', 'title': '', 'href': '' },
+                { 'shape': 'poly', 'coords': '220,241,237,263,235,351,229,395,214,457,204,480,203,470,203,429,200,392,200,339,205,294', 'title': '', 'href': '' },
+                { 'shape': 'poly', 'coords': '196,262,206,277,197,338,201,450,196,486,185,501,176,494,170,486,163,481,159,470,153,442,152,414,158,379,166,336', 'title': '', 'href': '' }
+            ]
+            },
+        'Right Upper Arm': {
+            'src': 'https://raw.githubusercontent.com/ForkInABlender/rgwellness_webdevelopment/main/brachialis/600px-Brachialis_muscle01.png',
+            'areas': [
+                { 'shape': 'poly', 'coords': '129,230,143,287,142,318,140,344,130,361,118,388,115,396,116,416,109,424,103,406,99,379,93,348,96,309,106,263', 'title': 'Brachialis_muscle', 'href': '' },
+            ]
+            },
+        'Left Upper Arm': {
+            'src': 'https://raw.githubusercontent.com/ForkInABlender/rgwellness_webdevelopment/main/brachialis/600px-Brachialis_muscle01.png',
+            'areas': [
+                { 'shape': 'poly', 'coords': '486,426,493,416,502,368,505,333,498,280,469,227,455,293,453,325,467,364,473,377,481,394,480,411', 'title': 'Brachialis_muscle', 'href': '' }
+            ]
+            },
+        'Left Shoulder Blade': {
+            'src': 'https://github.com/ForkInABlender/rgwellness_webdevelopment/blob/main/teres%20minor/600px-Teres_minor_muscle_back4.png?raw=true',
+            'areas': [
+                { 'shape': 'poly', 'coords': '82,218,79,229,84,245,93,259,106,277,112,283,124,295,137,304,146,312,162,325,177,341,183,346,185,347,185,344,178,318,166,288,143,263,124,250,91,235', 'title': '', 'href': '' },
+            ]
+        },        
+        'Right Shoulder Blade': {
+            'src': 'https://github.com/ForkInABlender/rgwellness_webdevelopment/blob/main/teres%20minor/600px-Teres_minor_muscle_back4.png?raw=true',
+            'areas': [
+                { 'shape': 'poly', 'coords': '437,287,416,343,416,347,419,347,429,334,453,315,471,300,490,282,515,251,522,234,522,226,518,222,510,234,487,247,474,253', 'title': '', 'href': '' }
+            ]
+        },
+        'Head': {
+                'src': 'https://raw.githubusercontent.com/ForkInABlender/rgwellness_webdevelopment/refs/heads/main/2025_images/head/1106_Front_and_Side_Views_of_the_Muscles_of_Facial_Expressions.jpg',
+                'areas': [
+                    { 'shape': 'poly', 'coords': '193,208,200,199,208,193,225,188,243,189,260,198,271,208,278,222,266,224,257,214,246,206,235,203,223,204,207,207,193,225,183,226,184,218', 'title': 'orbicularis oculi', 'href': '' },
+                    { 'shape': 'poly', 'coords': '480,222,470,218,466,213,478,206,492,203,506,202,519,206,527,210,531,217,535,224,524,226,520,218,511,214,495,219', 'title': 'orbicularis oculi', 'href': '' },
+                    { 'shape': 'poly', 'coords': '764,202,772,183,768,161,758,132,733,99,704,77,674,60,627,57,593,60,549,70,532,79,530,84,554,78,544,84,568,79,544,91,572,86,556,91,546,97,576,91,548,102,552,106,572,97,551,110,573,101,586,100,627,92,656,96,676,110,688,135,695,152,698,178,696,188,699,196,705,183,705,197,713,187,712,204,717,195,716,210,721,195,722,210,726,195,728,209,734,198', 'title': 'epicranial aponeurosis', 'href': '' },
+                    { 'shape': 'poly', 'coords': '72,120,80,105,100,83,118,72,147,64,172,62,194,62,207,63,238,73,257,87,276,105,283,119,286,127,276,131,268,141,262,118,245,90,227,81,214,84,203,98,192,123,186,146,182,164,180,181,180,193,172,193,168,165,160,133,146,97,133,83,122,82,105,92,96,115,95,124,93,117,89,144,80,133', 'title': 'epicranial aponeurosis', 'href': 'https://www.youtube.com/embed/HXYHjfjEjuE' },
+                    { 'shape': 'poly', 'coords': '464,189,495,178,512,183,526,195,540,206,551,225,554,243,545,267,536,277,516,277,492,265,492,258,508,255,529,247,540,226,529,210,509,200,472,206,464,211,459,203', 'title': 'corrugator supercilii', 'href': '' },
+                    { 'shape': 'poly', 'coords': '110,324,121,338,120,347,114,351,107,345,108,340', 'title': 'buccinator', 'href': '' },
+                    { 'shape': 'poly', 'coords': '529,335,549,327,555,333,532,341', 'title': 'buccinator', 'href': '' },
+                    { 'shape': 'poly', 'coords': '187,318,176,326,162,320,150,322,132,331,126,343,125,354,130,365,138,372,158,377,171,376,186,376,200,376,213,369,221,361,224,352,222,337,214,328,204,323,196,320,183,334,203,336,214,346,197,359,172,364,144,358,134,345,156,335,181,337,196,321', 'title': 'orbicularis oris', 'href': '' },
+                    { 'shape': 'poly', 'coords': '475,337,471,346,474,352,480,359,485,368,499,366,512,361,526,346,526,328,511,311,494,304,480,299,471,300,468,310,465,323,472,320,484,318,507,333,510,339,495,345,484,353,476,349,472,342', 'title': 'orbicularis oris', 'href': '' },
+                    { 'shape': 'poly', 'coords': '701,244,725,212,735,203,744,206,752,210,762,208,760,227,753,242,746,250,742,258,732,264,723,269,713,261,704,252', 'title': 'occipitofrontalis', 'href': '' },
+                    { 'shape': 'poly', 'coords': '261,121,248,101,236,86,222,82,210,90,203,103,194,126,192,139,188,160,211,156,233,151,252,138,261,134', 'title': 'occipitofrontalis', 'href': '' },
+                    { 'shape': 'poly', 'coords': '524,82,532,87,538,90,542,98,545,104,547,110,547,118,540,124,533,133,522,150,508,157,475,149,483,121,500,97', 'title': 'occipitofrontalis', 'href': '' }
+            ]
+        },
+        'Back of Head': {
+            'src': 'https://github.com/ForkInABlender/rgwellness_webdevelopment/blob/main/suboccipitals/600px-Suboccipital_muscles05.png?raw=true',
+            'areas': [
+                { 'shape': 'poly', 'coords': '343,225,350,218,351,218,356,227,360,246,349,261,337,272,324,284,307,297,303,296,299,294', 'title': '', 'href': '' },
+                { 'shape': 'poly', 'coords': '297,292,293,296,272,281,257,268,241,249,238,243,241,231,244,219,246,217,249,217,256,227,271,247,276,261,285,272', 'title': '', 'href': '' },
+                { 'shape': 'poly', 'coords': '257,224,263,214,272,212,281,206,290,203,293,205,293,209,294,222,297,249,297,258,297,264,291,262,282,256,272,247', 'title': '', 'href': '' },
+                { 'shape': 'poly', 'coords': '307,264,304,262,300,264,304,228,303,212,304,205,307,205,316,206,328,212,335,215,340,222,337,233,326,246', 'title': '', 'href': '' },
+                { 'shape': 'poly', 'coords': '365,269,363,255,360,240,357,222,350,212,351,211,357,212,365,215,371,224,374,236,374,252,374,264,372,277,372,283,366,278', 'title': '', 'href': '' },
+                { 'shape': 'poly', 'coords': '241,226,237,239,234,256,234,267,232,280,224,287,225,265,223,251,225,239,224,229,228,221,233,214,240,210,244,208,246,211,243,217', 'title': '', 'href': '' },
+                { 'shape': 'poly', 'coords': '231,284,240,283,252,284,260,285,268,286,277,290,284,292,290,295,294,299,292,306,281,305,260,302,247,299,239,296,230,293,225,288', 'title': '', 'href': '' },
+                { 'shape': 'poly', 'coords': '306,297,314,293,322,290,337,286,348,285,365,283,369,287,369,291,360,294,350,299,331,305,308,305', 'title': '', 'href': '' }
+            ]
+        },
+        'C': { 'src': '','areas': [{'shape': 'rect', 'coords': '50,50,350,250', 'title': 'Back', 'href': ''}]}
+    }
+    def video_callback_example(src):
+        video_zone.clear()
+        iframe = html.IFRAME(width="940", height="600", src=src, title="", frameborder="0", allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share", allowfullscreen=True)
+        video_zone <= iframe
+        
+    def on_area_click(ev):
+        video_callback_example(src=ev.target.href)
+        
+    def area_click(ev):
+        title = jq(ev.target).attr('title')
+        video_zone = document["video_zone"]
+       
+        jq("#map").empty()
+        
+        if title in images:
+            document.getElementsByTagName('img')[0].src = images[title]['src']
+            video_zone.clear()
+            for area in images[title]['areas']:
+                area_html = f"<area shape='{area['shape']}' coords='{area['coords']}' href='{area['href']}' title='{area['title']}'>"
+                jq("#map").append(area_html)
+            for area in document.select('area'):
+                area.bind('click', on_area_click)
+        else:
+           window.location.reload()
+        
+        jq("img[usemap]").maphilight({
+            'fillColor': '0000f1',
+            'strokeColor': '00ff00',
+        })
+        jq("area").on("click", area_click)
+    
+    jq("area").on("click", area_click)
+    
+  </script>
+</body>
+</html>
